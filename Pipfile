@@ -6,6 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 djangorestframework = "*"
+tzdata = "*"
+django-allauth = "*"
+dj-rest-auth = "*"
+requests = "*"
+pyjwt = "*"
+cryptography = "*"
 
 [dev-packages]
 

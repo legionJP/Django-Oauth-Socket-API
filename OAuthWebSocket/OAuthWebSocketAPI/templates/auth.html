@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Welcome to OAuth WebSocket API</h1>
-    <h2>Sign in using OAuth</h2>
-    <a href="{% url 'Oauth' %}">Login</a>
-</body>
-</html>
+{% extends 'home.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% load socialaccount %}
+<h2>Login Page</h2>
+<p>Please sign in using OAuth</p>
+<a href="{% provider_login_url 'google' %}?next={% url 'google-callback' %}">Login With Google</a>
+{% endblock %}
