@@ -13,7 +13,7 @@ Django Project assesment for API end Point to Intregrate Google Auth, Google dri
     - ###  Endpoint where google sends the auth data
         - http://127.0.0.1:8000/accounts/google/login/callback/
 
-- "GET /accounts/google/login/callback/?state=M8MsLVQQHMUGuAlY&code=4%2F0AQSTgQHxv2J-_serinfo.profile HTTP/1.1" 302 0
+- "GET /accounts/google/login/callback/?state=----J-_serinfo.profile HTTP/1.1" 302 0
     - The GET request to the callback URL includes this authorization code and the state parameter.
 
    - ### API Endpoint to return the received Data
