@@ -1,6 +1,7 @@
 # Django-Oauth-Socket-API
 Project for Djnago REST APIs to Intregrate Google Auth, Google drive, and WebSocket App
-# Django-Oauth-Socket-API Documentation
+
+### Django-Oauth-Socket-API Documentation
 
 ## Table of Contents
 1. [Introduction](OAuthWebSocket/APIDocs/Introduction/overview.md)
