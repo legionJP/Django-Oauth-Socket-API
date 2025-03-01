@@ -25,6 +25,7 @@ def Oauth(request):
     return render(request, 'auth.html')
     #return HttpResponse(template_name='home.html')            
 
+# View 
 @api_view()
 @login_required
 def google_callback(request):
