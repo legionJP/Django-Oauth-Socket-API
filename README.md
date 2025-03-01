@@ -62,3 +62,7 @@ async_to_sync(channel_layer.receive)('test_channel')
 {'type': 'hello'}
 
 ```
+# DB for the WebSocket
+The Django ORM is a synchronous piece of code, and so if you want to access it from asynchronous code you need to do special handling to make sure its connections are closed properly
+
+If you are writing asynchronous code, however, you will need to call database methods in a safe, synchronous context, using database_sync_to_async or by using the asynchronous methods prefixed with a like Model.objects.aget().
