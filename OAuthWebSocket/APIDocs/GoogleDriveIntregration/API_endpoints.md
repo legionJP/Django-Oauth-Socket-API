@@ -1,6 +1,15 @@
 
 ### Google Drive Endpoints
 1. **Google Drive Download Endpoint:**
+
+# 1. Authentication Initializer:
+
+#### 1.  http://127.0.0.1:8000/google/authenticate/
+
+#### 2. http://127.0.0.1:8000/google/upload/
+
+#### 3. http://127.0.0.1:8000/google/download/{file_id}
+
     ```python
     import io
     from django.http import HttpResponse

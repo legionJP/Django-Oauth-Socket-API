@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "b79ac7ab-dfba-441b-a7f0-34ee296d587e",
+		"name": "90North",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42745686"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/accounts/google/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/google/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"google",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/google-callback/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Hunter123@23",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hunter",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/google-callback/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"google-callback",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/google/upload/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Hunter123@23",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hunter",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/google/list/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"google",
+						"list",
+						""
+					]
+				},
+				"description": "Google driver file upload"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/google/list/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/google/list/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"google",
+						"list",
+						""
+					]
+				},
+				"description": "API view to list all the files"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/google/download/1XTu_RUEfH2ij8q6bRa73L5_zanjLUheK/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/google/download/1XTu_RUEfH2ij8q6bRa73L5_zanjLUheK/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"google",
+						"download",
+						"1XTu_RUEfH2ij8q6bRa73L5_zanjLUheK",
+						""
+					]
+				},
+				"description": "download the file from Google Drive"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/chat/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/chat/?room_name=room2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						""
+					],
+					"query": [
+						{
+							"key": "room_name",
+							"value": "room2"
+						}
+					]
+				},
+				"description": "API end point for chat page "
+			},
+			"response": []
+		}
+	]
+}
