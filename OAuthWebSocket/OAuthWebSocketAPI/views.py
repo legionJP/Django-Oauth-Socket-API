@@ -74,7 +74,6 @@ def google_drive_auth(request):
         CLIENT_SECRETS_FILE,
         scopes=SCOPES,
         redirect_uri='http://127.0.0.1:8000/google/auth/callback/'
-        #redirect_uri='http://localhost:8000/google/auth/callback/'
 
     )
     authorization_url, state = flow.authorization_url(
@@ -106,9 +105,7 @@ def google_drive_callback(request):
     credentials = flow.credentials
     request.session['credentials'] = credentials_to_dict(credentials)
     return redirect('google_drive_upload')
-    # credentials = flow.credentials
-    # request.session['credentials'] = credentials_to_dict(credentials)
-    # return redirect('google_drive_upload')
+  
 
 def credentials_to_dict(credentials):
     return {'token': credentials.token,
@@ -176,5 +173,10 @@ def google_drive_download(request, file_id):
         status, done = downloader.next_chunk()
     
     fh.seek(0)
-    response = HttpResponse(fh.read(), content_type=file['mimeType'])
+    with open(file['name'],'wb') as f:
+        f.write(fh.read())
+
+    response = HttpResponse(fh.read(), content_type=file['mimeType']) # retrun file to download
+    response['Content-Disposition'] = f'attachment; filename="{file["name"]}"'
+
     return response
