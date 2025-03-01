@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div>
+    <ul> 
+        {% for file in files %}
+        <li>
+            {{ file.name }} ({{ file.mimeType }})
+            <a href="{% url 'google_drive_download' file.id %}">Download</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

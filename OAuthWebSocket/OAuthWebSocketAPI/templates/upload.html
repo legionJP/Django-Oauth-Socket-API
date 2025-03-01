@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h2>Upload File to the Google Drive</h2>
+<p>file selector</p>
+<form action="{% url 'google_drive_upload' %}" method="post" enctype="multipart/form-data"> 
+    {% csrf_token %}
+    <input type="file" name="file" required>
+    <button type="submit">Upload</button>
+</form>
+
+<a href="{% url 'google_drive_list' %}"> Download Drive Files </a> 
+
+{% endblock %}

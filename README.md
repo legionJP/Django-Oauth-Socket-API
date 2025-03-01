@@ -19,5 +19,15 @@ Django Project assesment for API end Point to Intregrate Google Auth, Google dri
    - ### API Endpoint to return the received Data
         - http://127.0.0.1:8000/api/google-callback/
 
+# 2. Google Drive Integration
+. Develop an endpoint that allows users to connect their Google Drive.
+· Implement functionality for users to upload files to their Google Drive.
+. Provide an option to fetch and download files locally from Google Drive.
 
-# 2. Google Drive Integrations :
+ - # Libraries for the google auth and picker drvier 
+- pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+
+# 3. WebSocket for User Chat
+· Implement a WebSocket that enables real-time chat between two pre-
+configured users.
+. Ensure that messages are sent and received in real-time.

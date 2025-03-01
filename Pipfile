@@ -12,6 +12,10 @@ dj-rest-auth = "*"
 requests = "*"
 pyjwt = "*"
 cryptography = "*"
+google-auth = "*"
+google-auth-oauthlib = "*"
+google-auth-httplib2 = "*"
+google-api-python-client = "*"
 
 [dev-packages]
 

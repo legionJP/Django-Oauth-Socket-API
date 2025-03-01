@@ -88,6 +88,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'OAuthWebSocket.wsgi.application'
+# settings.py
+
+# Use database-backed sessions (default)
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+# Optional settings for security
+SESSION_COOKIE_HTTPONLY = True  # Helps prevent XSS attacks
+SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Set to True if you want sessions to expire when the browser closes
 
 
 # Database
@@ -136,6 +145,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Media files (uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
