@@ -31,3 +31,34 @@ Django Project assesment for API end Point to Intregrate Google Auth, Google dri
 · Implement a WebSocket that enables real-time chat between two pre-
 configured users.
 . Ensure that messages are sent and received in real-time.
+
+1. Configure ASGI
+2. Create the Consumers or Channels 
+3. Routing 
+4. WebSockets API to initate the Handshakes
+
+##  consumer that accepts WebSocket connections on the path /ws/chat/ROOM_NAME/ that takes any message it receives on the WebSocket and echos it back to the same WebSocket.
+## path prefix like /ws/ to distinguish WebSocket connections
+
+- the ProtocolTypeRouter will first inspect the type of connection. If it is a WebSocket connection (ws:// or wss://), the connection will be given to the AuthMiddlewareStack
+
+-  AuthenticationMiddleware populates the request object of a view function with the currently authenticated user. (Scopes will be discussed later in this tutorial.) Then the connection will be given to the URLRouter.
+
+# Enable a channel layer
+A channel layer provides the following abstractions:
+
+- A channel layer is a kind of communication system. It allows multiple consumer instances to talk with each other, and with other parts of Django.
+
+- A channel is a mailbox where messages can be sent to. Each channel has a name. Anyone who has the name of a channel can send a message to the channel.
+
+- A group is a group of related channels. A group has a name. Anyone who has the name of a group can add/remove a channel to the group by name and send a message to all channels in the group. It is not possible to enumerate what channels are in a particular group.
+```py
+$ python3 manage.py shell
+import channels.layers
+channel_layer = channels.layers.get_channel_layer()
+from asgiref.sync import async_to_sync
+async_to_sync(channel_layer.send)('test_channel', {'type': 'hello'})
+async_to_sync(channel_layer.receive)('test_channel')
+{'type': 'hello'}
+
+```

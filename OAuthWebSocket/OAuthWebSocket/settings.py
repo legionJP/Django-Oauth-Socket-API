@@ -33,6 +33,8 @@ SITE_ID=2
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'OAuthWebSocketAPI.apps.OauthwebsocketapiConfig',
+    'WebSocketApp.apps.WebsocketappConfig',
     'rest_framework',
     'django.contrib.sites',
     'allauth',
@@ -86,8 +89,14 @@ TEMPLATES = [
         },
     },
 ]
-
+ASGI_APPLICATION = 'OAuthWebSocket.asgi.application'
 WSGI_APPLICATION = 'OAuthWebSocket.wsgi.application'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+    },
+}
 # settings.py
 
 # Use database-backed sessions (default)

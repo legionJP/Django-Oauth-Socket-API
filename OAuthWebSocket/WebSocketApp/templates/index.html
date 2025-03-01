@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+</head>
+<body>
+    What chat room would you like to enter?<br>
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <input id="room-name-input" type="text" name="room_name" size="100"><br>
+        <input id="room-name-submit" type="submit" value="Enter">
+    </form>
+</body>
+</html>
+
+
+
